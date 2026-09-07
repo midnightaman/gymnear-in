@@ -891,7 +891,7 @@ body{overflow-x:hidden}
 @media(max-width:640px){.home{padding:44px 20px 60px}}
 
 /* pins (used by both leaflet + fallback) */
-.pin{background:#fff;border:1px solid var(--line);border-radius:100px;padding:3px 10px;font-size:13px;font-weight:600;
+.pin{background:#fff;border:1px solid var(--line);border-radius:100px;padding:2px 8px;font-size:12px;font-weight:600;
   white-space:nowrap;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.2);color:var(--ink);text-align:center;
   transition:background .12s,color .12s}
 .pin:hover,.pin.on{background:var(--ink);color:#fff;border-color:var(--ink)}
@@ -953,7 +953,6 @@ body{overflow-x:hidden}
 .zoomctl button{width:34px;height:34px;background:#fff;border:none;font-size:19px;line-height:1;cursor:pointer;color:var(--ink)}
 .zoomctl button:hover{background:var(--soft)}
 .zoomctl button+button{border-top:1px solid var(--line)}
-.arealabel{position:absolute;transform:translate(-50%,14px);font-size:12px;color:var(--ink-3);white-space:nowrap;pointer-events:none}
 .mapnote{position:absolute;right:14px;top:14px;z-index:800;background:#fff;border:1px solid var(--line);
   border-radius:8px;padding:9px 13px;font-size:13px;color:var(--ink-2);box-shadow:0 1px 4px rgba(0,0,0,.06)}
 .maptoggle{display:none}
@@ -1292,48 +1291,94 @@ const CITIES = [
 
 const GYMS = {
   lucknow:[
-    {name:"Fitness Gladiator (19x7)",    area:"Ashiyana",        cat:"Strength",       lat:26.795429, lng:80.918275, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
-    {name:"Fitness 24",                  area:"Ashiyana",        cat:"Strength",       lat:26.794639, lng:80.914540, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
-    {name:"Muscle Master Unisex Gym",    area:"Ashiyana",        cat:"Strength",       lat:26.797139, lng:80.923354, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
-    {name:"The Force Gym Unisex",        area:"Ashiyana",        cat:"Strength",       lat:26.787860, lng:80.913668, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
-    {name:"Impel Fitness",               area:"Ashiyana",        cat:"Strength",       lat:26.786850, lng:80.913861, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
-    {name:"Transformation Unisex Gym",   area:"Ashiyana",        cat:"Strength",       lat:26.778035, lng:80.908559, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
-    {name:"Slam Fitness Gym",            area:"Ashiyana",        cat:"Strength",       lat:26.787939, lng:80.909164, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
-    {name:"Max Fitness Gym",             area:"Ashiyana",        cat:"Strength",       lat:26.793750, lng:80.912667, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
-    {name:"Gym Core",                    area:"Ashiyana",        cat:"Strength",       lat:26.797564, lng:80.913272, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
-    {name:"Divine Fitness",              area:"Ashiyana",        cat:"Strength",       lat:26.775434, lng:80.918467, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
-    {name:"Muscle Monsters",             area:"Ashiyana",        cat:"Strength",       lat:26.795805, lng:80.906257, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
-    {name:"Limitless Fitness Gym",       area:"Ashiyana",        cat:"Strength",       lat:26.795329, lng:80.917691, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
-    {name:"WRKOUT WORLD",                area:"Ashiyana",        cat:"24-hour",        lat:26.799614, lng:80.922952, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
-    {name:"TRAIN 365 by Prateek",        area:"Ruchi Khand",     cat:"Strength",       lat:26.780962, lng:80.927443, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
-    {name:"Elevana Fitness",             area:"Ruchi Khand",     cat:"Strength",       lat:26.780602, lng:80.929209, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
-    {name:"Maxxfit Gym Rajnikhand",      area:"Ruchi Khand",     cat:"Strength",       lat:26.784831, lng:80.933890, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
-    {name:"Reyom Fitness Factory",       area:"Ruchi Khand",     cat:"Strength",       lat:26.787124, lng:80.931342, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
-    {name:"QuikPhyt Gym",                area:"Ruchi Khand",     cat:"Strength",       lat:26.787206, lng:80.930482, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
-    {name:"Anytime Fitness",             area:"Ratan Khand",     cat:"24-hour",        lat:26.780716, lng:80.925427, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
-    {name:"Cult Neo Gym Ashiyana",       area:"Ratan Khand",     cat:"Cardio & group", lat:26.780227, lng:80.929525, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
-    {name:"MMA Matrix Gym",              area:"Ratan Khand",     cat:"Boxing & MMA",   lat:26.780878, lng:80.924842, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
-    {name:"Wrkout World Fitness Studio", area:"Ratan Khand",     cat:"Strength",       lat:26.779872, lng:80.930626, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
-    {name:"Star's Gym",                  area:"Ratan Khand",     cat:"Strength",       lat:26.777137, lng:80.930720, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
-    {name:"BMFITZONE Rajnikhand",        area:"Ratan Khand",     cat:"Strength",       lat:26.777035, lng:80.932303, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
-    {name:"Fitness Regiment",            area:"South City",      cat:"CrossFit",       lat:26.766588, lng:80.932734, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
-    {name:"Workit Fitness",              area:"South City",      cat:"Strength",       lat:26.766692, lng:80.932548, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
-    {name:"Trinity Fitness",             area:"South City",      cat:"24-hour",        lat:26.771314, lng:80.943734, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
-    {name:"Transformation Zone Gym",     area:"Eldeco Udyan II", cat:"Strength",       lat:26.764062, lng:80.931996, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
-    {name:"Vivanation Fitness Studio",   area:"Eldeco Udyan II", cat:"Cardio & group", lat:26.766520, lng:80.939778, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
-    {name:"The Fitness Ray",             area:"Omaxe City",      cat:"Strength",       lat:26.763528, lng:80.930359, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
-    {name:"MY Fitness Hub",              area:"Omaxe City",      cat:"Cardio & group", lat:26.760635, lng:80.919919, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
-    {name:"The Lifter's Unisex Gym",     area:"Hind Nagar",      cat:"24-hour",        lat:26.790559, lng:80.897267, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
-    {name:"Neil's Fitness Gym",          area:"Hind Nagar",      cat:"Strength",       lat:26.785874, lng:80.888209, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
-    {name:"K V Fitness",                 area:"LDA Colony",      cat:"Strength",       lat:26.780879, lng:80.899103, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
-    {name:"The Fitness Era",             area:"LDA Colony",      cat:"Strength",       lat:26.779297, lng:80.905372, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
-    {name:"Being Fit",                   area:"LDA Colony",      cat:"Strength",       lat:26.784932, lng:80.900037, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
-    {name:"Shakti Arena Xtream Fitness", area:"LDA Colony",      cat:"Strength",       lat:26.796484, lng:80.898320, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
-    {name:"Metro Fitness Center",        area:"Transport Nagar", cat:"Strength",       lat:26.773657, lng:80.907913, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
-    {name:"Fit Finity",                  area:"Transport Nagar", cat:"Strength",       lat:26.767803, lng:80.897848, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
-    {name:"Harikesh Health Club",        area:"Transport Nagar", cat:"Strength",       lat:26.765988, lng:80.896251, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
-    {name:"Fitness La-Casa",             area:"Mansarovar",      cat:"Strength",       lat:26.773664, lng:80.892544, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
-    {name:"Alpha Athlete Zone",          area:"Amausi",          cat:"24-hour",        lat:26.775887, lng:80.885330, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null}
+    {name:"Fitness Gladiator (19x7)",                area:"Ashiyana",          cat:"Strength",        lat:26.795429, lng:80.918275, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Fitness 24",                              area:"Ashiyana",          cat:"Strength",        lat:26.794639, lng:80.914540, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Muscle Master Unisex Gym",                area:"Ashiyana",          cat:"Strength",        lat:26.797139, lng:80.923354, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"The Force Gym Unisex",                    area:"Ashiyana",          cat:"Strength",        lat:26.787860, lng:80.913668, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Impel Fitness",                           area:"Ashiyana",          cat:"Strength",        lat:26.786850, lng:80.913861, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Transformation Unisex Gym",               area:"Ashiyana",          cat:"Strength",        lat:26.778035, lng:80.908559, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Slam Fitness Gym",                        area:"Ashiyana",          cat:"Strength",        lat:26.787939, lng:80.909164, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Max Fitness Gym",                         area:"Ashiyana",          cat:"Strength",        lat:26.793750, lng:80.912667, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Gym Core",                                area:"Ashiyana",          cat:"Strength",        lat:26.797564, lng:80.913272, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Divine Fitness",                          area:"Ashiyana",          cat:"Strength",        lat:26.775434, lng:80.918467, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Muscle Monsters",                         area:"Ashiyana",          cat:"Strength",        lat:26.795805, lng:80.906257, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Limitless Fitness Gym",                   area:"Ashiyana",          cat:"Strength",        lat:26.795329, lng:80.917691, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"WRKOUT WORLD",                            area:"Ashiyana",          cat:"24-hour",         lat:26.799614, lng:80.922952, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"TRAIN 365 by Prateek",                    area:"Ruchi Khand",       cat:"Strength",        lat:26.780962, lng:80.927443, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Elevana Fitness",                         area:"Ruchi Khand",       cat:"Strength",        lat:26.780602, lng:80.929209, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Maxxfit Gym Rajnikhand",                  area:"Ruchi Khand",       cat:"Strength",        lat:26.784831, lng:80.933890, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Reyom Fitness Factory",                   area:"Ruchi Khand",       cat:"Strength",        lat:26.787124, lng:80.931342, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"QuikPhyt Gym",                            area:"Ruchi Khand",       cat:"Strength",        lat:26.787206, lng:80.930482, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Anytime Fitness (Ratan Khand)",           area:"Ratan Khand",       cat:"24-hour",         lat:26.780716, lng:80.925427, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Cult Neo Gym Ashiyana",                   area:"Ratan Khand",       cat:"Cardio & group",  lat:26.780227, lng:80.929525, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"MMA Matrix Gym",                          area:"Ratan Khand",       cat:"Boxing & MMA",    lat:26.780878, lng:80.924842, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Wrkout World Fitness Studio",             area:"Ratan Khand",       cat:"Strength",        lat:26.779872, lng:80.930626, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Star's Gym",                              area:"Ratan Khand",       cat:"Strength",        lat:26.777137, lng:80.930720, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"BMFITZONE Rajnikhand",                    area:"Ratan Khand",       cat:"Strength",        lat:26.777035, lng:80.932303, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Fitness Regiment",                        area:"South City",        cat:"CrossFit",        lat:26.766588, lng:80.932734, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Workit Fitness",                          area:"South City",        cat:"Strength",        lat:26.766692, lng:80.932548, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Trinity Fitness",                         area:"South City",        cat:"24-hour",         lat:26.771314, lng:80.943734, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Transformation Zone Gym",                 area:"Eldeco Udyan II",   cat:"Strength",        lat:26.764062, lng:80.931996, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Vivanation Fitness Studio",               area:"Eldeco Udyan II",   cat:"Cardio & group",  lat:26.766520, lng:80.939778, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"The Fitness Ray",                         area:"Omaxe City",        cat:"Strength",        lat:26.763528, lng:80.930359, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"MY Fitness Hub",                          area:"Omaxe City",        cat:"Cardio & group",  lat:26.760635, lng:80.919919, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"The Lifter's Unisex Gym",                 area:"Hind Nagar",        cat:"24-hour",         lat:26.790559, lng:80.897267, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Neil's Fitness Gym",                      area:"Hind Nagar",        cat:"Strength",        lat:26.785874, lng:80.888209, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"K V Fitness",                             area:"LDA Colony",        cat:"Strength",        lat:26.780879, lng:80.899103, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"The Fitness Era",                         area:"LDA Colony",        cat:"Strength",        lat:26.779297, lng:80.905372, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Being Fit",                               area:"LDA Colony",        cat:"Strength",        lat:26.784932, lng:80.900037, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Shakti Arena Xtream Fitness",             area:"LDA Colony",        cat:"Strength",        lat:26.796484, lng:80.898320, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Metro Fitness Center",                    area:"Transport Nagar",   cat:"Strength",        lat:26.773657, lng:80.907913, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Fit Finity",                              area:"Transport Nagar",   cat:"Strength",        lat:26.767803, lng:80.897848, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Harikesh Health Club",                    area:"Transport Nagar",   cat:"Strength",        lat:26.765988, lng:80.896251, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Fitness La-Casa",                         area:"Mansarovar",        cat:"Strength",        lat:26.773664, lng:80.892544, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Alpha Athlete Zone",                      area:"Amausi",            cat:"24-hour",         lat:26.775887, lng:80.885330, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Savage Fitness",                          area:"Gomti Nagar",       cat:"Strength",        lat:26.826479, lng:81.008944, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Fusion Fitness Gym",                      area:"Gomti Nagar",       cat:"Strength",        lat:26.853136, lng:81.021622, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Wellness Club Xpress (Vastu Khand)",      area:"Gomti Nagar",       cat:"Strength",        lat:26.869897, lng:81.025732, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Wellness Club Xpress (Vishal Khand)",     area:"Gomti Nagar",       cat:"Strength",        lat:26.849824, lng:80.988419, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Cult Gym Gomti Nagar",                    area:"Gomti Nagar",       cat:"Cardio & group",  lat:26.867327, lng:81.012758, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Grand Fitness",                           area:"Gomti Nagar",       cat:"Strength",        lat:26.866606, lng:81.024642, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Fitopia Fitness",                         area:"Gomti Nagar",       cat:"Strength",        lat:26.838908, lng:81.011097, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"K Fitness",                               area:"Gomti Nagar",       cat:"Strength",        lat:26.871433, lng:81.022718, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Anytime Fitness (Vishal Khand)",          area:"Gomti Nagar",       cat:"24-hour",         lat:26.846449, lng:80.988784, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Anytime Fitness (Vibhuti Khand)",         area:"Gomti Nagar",       cat:"24-hour",         lat:26.866238, lng:81.010716, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Power & Fitness Gym",                     area:"Gomti Nagar",       cat:"Strength",        lat:26.870949, lng:81.023976, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"XtroFit Lab Hybrid Gym",                  area:"Gomti Nagar",       cat:"HYROX",           lat:26.869497, lng:81.015007, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Gabbar Fitness Club",                     area:"Gomti Nagar",       cat:"Strength",        lat:26.866264, lng:81.021216, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"IRL Gym",                                 area:"Gomti Nagar",       cat:"Strength",        lat:26.847037, lng:81.028778, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Fitt N First Unisex Gym",                 area:"Gomti Nagar",       cat:"Strength",        lat:26.858776, lng:81.004990, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Cult Neo Gym Alambagh",                   area:"Alambagh",          cat:"Cardio & group",  lat:26.803281, lng:80.896220, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Vega Fitness Factory",                    area:"Alambagh",          cat:"Strength",        lat:26.812117, lng:80.902199, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Creed Fitness",                           area:"Alambagh",          cat:"Strength",        lat:26.820561, lng:80.911286, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"AFS Gym",                                 area:"Alambagh",          cat:"Strength",        lat:26.812231, lng:80.904785, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Xtreme Fitness Studio",                   area:"Alambagh",          cat:"Strength",        lat:26.807387, lng:80.898781, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Hritik Fitness & Dance Studio",           area:"Alambagh",          cat:"Zumba",           lat:26.809247, lng:80.893517, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Fitness Plus",                            area:"Alambagh",          cat:"Strength",        lat:26.810218, lng:80.915211, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Transformation Zone",                     area:"Alambagh",          cat:"Strength",        lat:26.808553, lng:80.911617, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"O G Fitness",                             area:"Alambagh",          cat:"Strength",        lat:26.811280, lng:80.904386, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Fitness Garage",                          area:"Alambagh",          cat:"Strength",        lat:26.803366, lng:80.893476, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Healthism 24x7",                          area:"Golf City",         cat:"24-hour",         lat:26.790735, lng:80.998291, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Anavrin Fitness",                         area:"Golf City",         cat:"Strength",        lat:26.782939, lng:80.992024, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Anytime Fitness (Golf City)",             area:"Golf City",         cat:"24-hour",         lat:26.782715, lng:80.992030, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Fitnext Studio",                          area:"Golf City",         cat:"Strength",        lat:26.798628, lng:81.009806, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"The Fit Mantra Gym & Wellness",           area:"Golf City",         cat:"24-hour",         lat:26.786496, lng:80.991054, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"GetFitt 24x7 Ansal",                      area:"Golf City",         cat:"24-hour",         lat:26.792568, lng:80.999869, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"JR Fitness 24x7",                         area:"Golf City",         cat:"24-hour",         lat:26.782004, lng:80.990043, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Fusion Fit",                              area:"Hazratganj",        cat:"Strength",        lat:26.853465, lng:80.949542, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Gold's Gym Hazratganj",                   area:"Hazratganj",        cat:"Strength",        lat:26.854146, lng:80.952803, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Fitness Habit",                           area:"Hazratganj",        cat:"Strength",        lat:26.846871, lng:80.948165, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Anytime Fitness (Hazratganj)",            area:"Hazratganj",        cat:"24-hour",         lat:26.856136, lng:80.955722, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Meta Fit",                                area:"Hazratganj",        cat:"Strength",        lat:26.843012, lng:80.949597, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Olive Fitness Center",                    area:"Hazratganj",        cat:"Strength",        lat:26.853141, lng:80.955435, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Bajrang Akhara & Vyamshala",              area:"Hazratganj",        cat:"Strength",        lat:26.846169, lng:80.950677, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"The Fitness Bricks",                      area:"Hazratganj",        cat:"Strength",        lat:26.846741, lng:80.963244, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Smash Fit Unisex Gym",                    area:"Hazratganj",        cat:"Strength",        lat:26.853705, lng:80.948420, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Slimline Wellness Gym",                   area:"Hazratganj",        cat:"Strength",        lat:26.850493, lng:80.940040, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"TWS Gym",                                 area:"Gomti Nagar",       cat:"Strength",        lat:26.862166, lng:81.023442, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Sweat and Blood Fitness Centre",          area:"Gomti Nagar",       cat:"Strength",        lat:26.842896, lng:81.013103, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"Benefitness Unisex",                      area:"Gomti Nagar",       cat:"Strength",        lat:26.861510, lng:81.012656, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null},
+    {name:"ZoeFit",                                  area:"Golf City",         cat:"Strength",        lat:26.793562, lng:81.005188, monthly:null, quarterly:null, annual:null, joining:null, dayPass:null, photo:null}
   ]
 };
 CITIES.forEach(c => { if(!GYMS[c.slug]) GYMS[c.slug] = []; });
@@ -1548,8 +1593,7 @@ function buildCity(slug){
       stage.innerHTML = list.map((g,i) => {
         const x = ((g.lng - x0)/(x1-x0))*100, y = ((y1 - mercY(g.lat))/(y1-y0))*100;
         const label = g.monthly === null ? "₹—" : rupee(g.monthly);
-        return `<button class="pin" data-i="${i}" style="left:${x}%;top:${y}%">${label}</button>
-                <span class="arealabel" style="left:${x}%;top:${y}%">${g.area}</span>`;
+        return `<button class="pin" data-i="${i}" style="left:${x}%;top:${y}%">${label}</button>`;
       }).join("");
       pinEls = [...stage.querySelectorAll(".pin")];
       attachZoom(stage, fb);
